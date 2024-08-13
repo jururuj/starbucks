@@ -8,7 +8,7 @@ class Menu(Enum):
     ORDER = 4
     END = 5
 
-
+print('hello')
 def main():
     item_list = ItemList()
     while True:
