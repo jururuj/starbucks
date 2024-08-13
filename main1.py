@@ -27,19 +27,19 @@ def select():
     print('2.음료삭제')
     print('3.선택 음료 확인')
     print('4.선택 음료 주문')
-    print('5.프로그램 종료')
+    print('5.프로그램 종료\n')
 
 def add_menu(list_):
     print('====== ADD MENU =====')
-    print('1. 아메리카노')
-    print('2. 카페라떼')
-    print('3. 콜드브루')
-    print('4. 에스프레소')
-    print('5. 아이스티')
-    print('6. 말차라떼')
+    print('1. 아메리카노: 4500원')
+    print('2. 카페라떼: 5000원')
+    print('3. 콜드브루: 4900원')
+    print('4. 에스프레소: 4000원')
+    print('5. 아이스티: 5900원')
+    print('6. 말차라떼: 6100원\n')
 
     n = int(input('선택: '))
-    if len(list_.name) > 10:
+    if len(list_.name) > 9:
         print('음료는 10개까지 주문가능')
         return
 
@@ -69,14 +69,14 @@ def remove_menu(list_):
     
 def check_menu(list_):
     print(f'주문메뉴 : {list_.name}')
-    print(f'주문 총액 : {list_.total}')
+    print(f'주문 총액 : {list_.total}\n')
 
 def order(list_):
     print(f'주문메뉴 : {list_.name}')
-    print(f'주문 총액 : {list_.total}')
+    print(f'주문 총액 : {list_.total}\n')
     print('주문하시겠습니까?')
     print('1. YES')
-    print('2. NO')
+    print('2. NO\n')
     ch = int(input('선택:'))
     
     if ch == 1:
