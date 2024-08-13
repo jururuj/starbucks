@@ -41,19 +41,34 @@ def add_menu(list_):
     n = int(input('선택: '))
     if len(list_.name) > 10:
         print('음료는 10개까지 주문가능')
+        return
 
     for idx, name in enumerate(list_.menu):
-        if n == idx-1:
+        if n == idx+1:
             list_.name.append(name)
             list_.total += list_.menu[name]
     if not 0 < n < 7:
         print('존재하지 않는 번호입니다')
 
 def remove_menu(list_):
-    n = input()
-    list.name.remove(n)
-    print(list_.name)
+    print('====== REMOVE MENU =====')
+    print('1. 아메리카노')
+    print('2. 카페라떼')
+    print('3. 콜드브루')
+    print('4. 에스프레소')
+    print('5. 아이스티')
+    print('6. 말차라떼')
 
+    n = int(input('선택: '))
+    for idx, name in enumerate(list_.menu):
+        if n == idx+1:
+            list_.name.remove(name)
+            list_.total -= list_.menu[name]
+        
+    if not 0 < n < 7:
+        print('존재하지 않는 번호입니다')
+    print(list_.name)
+    
 def check_menu(list_):
     print(f'주문메뉴 : {list_.name}')
     print(f'주문 총액 : {list_.total}')
@@ -64,7 +79,8 @@ def order(list_):
     print('주문하시겠습니까?')
     print('1. YES')
     print('2. NO')
-    ch = input('선택:')
+    ch = int(input('선택:'))
+    
     if ch == 1:
         return 1
     else:
