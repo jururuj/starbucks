@@ -7,6 +7,23 @@ class Menu(Enum):
     CHECK = 3
     ORDER = 4
     END = 5
+    
+class ItemList:
+    def __init__(self):
+        self.name = []
+        self.price = []
+
+def add_menu(list_):
+    n = input()
+    list_.name.append(n)
+
+def select():
+    print('hhi')
+
+#def add_menu():
+#def remove_menu():
+#def check_menu(list_):
+#def order():
 
 
 def main():
@@ -18,6 +35,7 @@ def main():
 
         if choice == Menu.ADD.value:
             add_menu(item_list)
+            print(item_list.name)
             print("\n\n")
         elif choice == Menu.REMOVE.value:
             remove_menu(item_list)
