@@ -52,18 +52,16 @@ def add_menu(list_):
 
 def remove_menu(list_):
     print('====== REMOVE MENU =====')
-    print('1. 아메리카노')
-    print('2. 카페라떼')
-    print('3. 콜드브루')
-    print('4. 에스프레소')
-    print('5. 아이스티')
-    print('6. 말차라떼')
 
     n = int(input('선택: '))
     for idx, name in enumerate(list_.menu):
         if n == idx+1:
             list_.name.remove(name)
             list_.total -= list_.menu[name]
+        else:
+            print('주문한 메뉴가 없습니다. 다시 확인해주세요')
+            break
+        
         
     if not 0 < n < 7:
         print('존재하지 않는 번호입니다')
